@@ -79,8 +79,8 @@ public class SecurityBl {
 
         Map<String, String> result = new HashMap<>();
         Integer userIdAsInt = Integer.parseInt(idUsuario);
-        result.put("authentication", generateJWT(userIdAsInt, 2, "AUTHN", userDao.findAllFeatureCodeByUserId(userIdAsInt)));
-        result.put("refresh", generateJWT(Integer.parseInt(idUsuario), 6, "REFRESH", null));
+        result.put("authentication", generateJWT(userIdAsInt, 6, "AUTHN", userDao.findAllFeatureCodeByUserId(userIdAsInt)));
+        result.put("refresh", generateJWT(Integer.parseInt(idUsuario), 3, "REFRESH", null));
         return result;
 
     }
